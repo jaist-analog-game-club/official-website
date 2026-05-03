@@ -1,3 +1,20 @@
+// === Hamburger menu ===
+const hamburger = document.querySelector('.nav-hamburger');
+const navEl = document.querySelector('nav');
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navEl.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  // リンクをクリックしたら閉じる
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      navEl.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
