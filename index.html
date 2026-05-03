@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAIST Analog Game Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-brand-mark">J</div>
+    <span>JAIST · A.G.C.</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="#join">Join</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="jp">JP</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</nav>
+
+<div class="vertical-tag">EST · MMXXVI · GRADUATE SCHOOL</div>
+
+<header class="hero">
+  <div class="hero-eyebrow">Japan Advanced Institute of Science and Technology</div>
+  <div class="hero-text">
+    <h1 class="hero-title">
+      <span class="line"><span>JAIST</span></span>
+      <span class="line"><span>ANALOG GAME</span></span>
+      <span class="line"><span>CLUB</span></span>
+    </h1>
+
+    <div class="hero-divider">
+      <span class="hero-divider-line"></span>
+      <span class="hero-divider-mark">✦ ✦ ✦</span>
+      <span class="hero-divider-line" style="background: linear-gradient(-90deg, var(--bronze), transparent);"></span>
+    </div>
+
+    <p class="hero-lead" data-i18n="hero-lead">
+      Where strategy meets chance, and minds meet across the table.
+      麻雀・ポーカーを核とし、<em>盤上のあらゆる遊戯</em>を通じて研究科を越えた邂逅を育む、JAIST 大学院公認のアナログゲームサークル。
+    </p>
+
+    <div class="hero-actions">
+      <a href="#join" class="btn-primary">
+        <span>Join the Club</span>
+        <span>→</span>
+      </a>
+      <a href="#about" class="btn-secondary">Learn more</a>
+    </div>
+  </div>
+
+  <div class="hero-emblem">
+    <div class="emblem-wrap">
+      <div class="emblem-glow"></div>
+      <div class="emblem-ring">
+        <svg viewBox="0 0 600 600">
+          <defs>
+            <path id="circle" d="M 300, 300 m -270, 0 a 270,270 0 1,1 540,0 a 270,270 0 1,1 -540,0" />
+          </defs>
+          <text>
+            <textPath href="#circle">
+              ✦ JAPAN ADVANCED INSTITUTE OF SCIENCE AND TECHNOLOGY ✦ ANALOG GAME CLUB ✦
+            </textPath>
+          </text>
+        </svg>
+      </div>
+      <img src="assets/emblem.png" alt="JAIST Analog Game Club Emblem" class="emblem-img">
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Chapter I · About</div>
+    <h2 class="section-title">A club for the <em>thinking</em> game</h2>
+    <p class="section-sub">— our philosophy</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p data-i18n="about-p1">
+        JAIST Analog Game Club は、北陸先端科学技術大学院大学に集う大学院生のための公認サークルです。麻雀・ポーカーを中心に、ボードゲーム・チェス・TRPG など、卓を囲んで遊ぶあらゆるアナログゲームを楽しんでいます。
+      </p>
+      <p data-i18n="about-p2">
+        勝敗は問題ではありません。<em>一手の判断</em>、<em>場の読み</em>、そして<em>対面で交わされる対話</em>。これらは研究という営みにも通じる「考える愉しみ」の延長線上にあります。専攻の垣根を越え、初心者から経験者まで、丁寧に教え合いながら一緒に上達していく雰囲気を大切にしています。
+      </p>
+      <p data-i18n="about-p3">
+        部員持ち寄りのボードゲームや新作体験会も随時開催。研究の合間の数時間、画面から離れて、もう一つの<em>知の遊戯</em>に身を委ねてみませんか。
+      </p>
+    </div>
+
+    <div class="stats-card reveal">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">8<span class="unit">members</span></div>
+          <div class="stat-label">Active</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">15<span class="unit">+</span></div>
+          <div class="stat-label">Research fields</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1<span class="unit">/ week</span></div>
+          <div class="stat-label">Regular meets</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5<span class="unit">+</span></div>
+          <div class="stat-label">Board games</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="games" class="games">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Chapter II · Games</div>
+    <h2 class="section-title">&emsp;What we <em>play&emsp;</em></h2>
+    <p class="section-sub">— from tiles to dice, from cards to boards</p>
+  </div>
+
+  <div class="games-grid">
+    <div class="game-card reveal">
+      <div class="game-num">No. 01</div>
+      <div class="game-icon">♠</div>
+      <h3 class="game-name">Poker</h3>
+      <div class="game-name-jp" data-i18n="game-jp-1">ポーカー</div>
+      <p class="game-desc" data-i18n="game-desc-1">テキサス・ホールデムを軸に開催。チップを使った本格的なトーナメント形式から、カジュアルなキャッシュゲームまで。読み合いと確率の世界へ。</p>
+      <div class="game-tags">
+        <span class="game-tag">Core</span>
+        <span class="game-tag">2–9 P</span>
+        <span class="game-tag">60 min+</span>
+      </div>
+    </div>
+
+    <div class="game-card reveal">
+      <div class="game-num">No. 02</div>
+      <div class="game-icon">🀄</div>
+      <h3 class="game-name">Mahjong</h3>
+      <div class="game-name-jp" data-i18n="game-jp-2">麻雀</div>
+      <p class="game-desc" data-i18n="game-desc-2">リーチ麻雀(日本麻雀)を基本に、初心者卓と経験者卓を分けて開催。点数計算の勉強会も実施し、ゼロから始められる環境を整えています。</p>
+      <div class="game-tags">
+        <span class="game-tag">Core</span>
+        <span class="game-tag">4 P</span>
+        <span class="game-tag">90 min+</span>
+      </div>
+    </div>
+
+    <div class="game-card reveal">
+      <div class="game-num">No. 03</div>
+      <div class="game-icon">⚂</div>
+      <h3 class="game-name">TRPG</h3>
+      <div class="game-name-jp" data-i18n="game-jp-3">テーブルトーク RPG</div>
+      <p class="game-desc" data-i18n="game-desc-3">D&D、クトゥルフ神話TRPG、ソードワールドなど。20面ダイスと想像力で物語を紡ぐセッションを定期的に開催しています。</p>
+      <div class="game-tags">
+        <span class="game-tag">Story</span>
+        <span class="game-tag">3–6 P</span>
+        <span class="game-tag">3 h+</span>
+      </div>
+    </div>
+
+    <div class="game-card reveal">
+      <div class="game-num">No. 04</div>
+      <div class="game-icon">♛</div>
+      <h3 class="game-name">Chess &amp; Shogi</h3>
+      <div class="game-name-jp" data-i18n="game-jp-4">チェス・将棋・囲碁</div>
+      <p class="game-desc" data-i18n="game-desc-4">古来より続く頭脳戦の極致。希望者を募って静かに盤に向かう時間も大切に。研究室から少し離れて、一手に集中する贅沢を。</p>
+      <div class="game-tags">
+        <span class="game-tag">Strategy</span>
+        <span class="game-tag">2 P</span>
+        <span class="game-tag">30 min+</span>
+      </div>
+    </div>
+
+    <div class="game-card reveal">
+      <div class="game-num">No. 05</div>
+      <div class="game-icon">⬢</div>
+      <h3 class="game-name">Board Games</h3>
+      <div class="game-name-jp" data-i18n="game-jp-5">ボードゲーム</div>
+      <p class="game-desc" data-i18n="game-desc-5">部員持ち寄りで多彩なタイトルを楽しむ。Catan, Carcassonne, Splendor, Dominion など定番から最新のドイツゲーム賞受賞作まで。</p>
+      <div class="game-tags">
+        <span class="game-tag">Variety</span>
+        <span class="game-tag">2–8 P</span>
+        <span class="game-tag">30–180 min</span>
+      </div>
+    </div>
+
+    <div class="game-card reveal">
+      <div class="game-num">No. 06</div>
+      <div class="game-icon">✦</div>
+      <h3 class="game-name">New Releases</h3>
+      <div class="game-name-jp" data-i18n="game-jp-6">新作体験会</div>
+      <p class="game-desc" data-i18n="game-desc-6">話題の新作ボードゲームをみんなで初プレイする月例企画。ルール解説から含めて、誰もが対等に楽しめる時間を共有します。</p>
+      <div class="game-tags">
+        <span class="game-tag">Event</span>
+        <span class="game-tag">Monthly</span>
+        <span class="game-tag">Open</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="activities" class="activities">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Chapter III · Activities</div>
+    <h2 class="section-title">When &amp; <em>where</em></h2>
+    <p class="section-sub">— our regular schedule</p>
+  </div>
+
+  <div class="schedule">
+    <div class="schedule-card reveal">
+      <div class="schedule-day">Tuesday</div>
+      <div class="schedule-title">Mahjong Night</div>
+      <div class="schedule-time">18:30 — 22:00</div>
+      <p class="schedule-desc" data-i18n="sched-desc-1">毎週火曜は麻雀卓を中心に開催。初心者向けレクチャーも随時実施しています。</p>
+    </div>
+
+    <div class="schedule-card reveal">
+      <div class="schedule-day">Friday</div>
+      <div class="schedule-title">Poker &amp; Boards</div>
+      <div class="schedule-time">19:00 — 23:00</div>
+      <p class="schedule-desc" data-i18n="sched-desc-2">ポーカートーナメントとボードゲームを並行開催。週末前のリラックスタイム。</p>
+    </div>
+
+    <div class="schedule-card reveal">
+      <div class="schedule-day">Monthly</div>
+      <div class="schedule-title">Tournaments</div>
+      <div class="schedule-time" data-i18n="sched-time-3">月 1 回 / 不定期</div>
+      <p class="schedule-desc" data-i18n="sched-desc-3">月例の麻雀大会、年 2 回のポーカートーナメント、夏冬の合宿を企画。</p>
+    </div>
+
+    <div class="schedule-card reveal">
+      <div class="schedule-day">Anytime</div>
+      <div class="schedule-title">Open Tables</div>
+      <div class="schedule-time" data-i18n="sched-time-4">部室開放時</div>
+      <p class="schedule-desc" data-i18n="sched-desc-4">部室は基本的に開放されています。空きコマに立ち寄って一局、というのも歓迎。</p>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-content">
+      <span>RIICHI</span><span class="dot">✦</span><span class="accent">ROYAL FLUSH</span><span class="dot">✦</span><span>NATURAL 20</span><span class="dot">✦</span><span class="accent">CHECKMATE</span><span class="dot">✦</span><span>CATAN</span><span class="dot">✦</span><span class="accent">ALL IN</span><span class="dot">✦</span><span>SPLENDOR</span><span class="dot">✦</span><span class="accent">YAKUMAN</span><span class="dot">✦</span><span>RIICHI</span><span class="dot">✦</span><span class="accent">ROYAL FLUSH</span><span class="dot">✦</span><span>NATURAL 20</span><span class="dot">✦</span><span class="accent">CHECKMATE</span><span class="dot">✦</span><span>CATAN</span><span class="dot">✦</span><span class="accent">ALL IN</span><span class="dot">✦</span><span>SPLENDOR</span><span class="dot">✦</span><span class="accent">YAKUMAN</span><span class="dot">✦</span>
+    </div>
+  </div>
+</section>
+
+<section id="calendar" class="calendar-section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Chapter IV · Calendar</div>
+    <h2 class="section-title">Upcoming <em>Events</em></h2>
+    <p class="section-sub" data-i18n="cal-sub">— plan your visit</p>
+  </div>
+
+  <div class="calendar-wrap reveal">
+    <div class="cal-header">
+      <button class="cal-nav-btn" id="calPrev">&#8592;</button>
+      <div class="cal-month-label" id="calMonthLabel"></div>
+      <button class="cal-nav-btn" id="calNext">&#8594;</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend">
+      <div class="cal-legend-item"><div class="cal-legend-color type-mahjong"></div><span data-i18n="legend-mahjong">Mahjong Night</span></div>
+      <div class="cal-legend-item"><div class="cal-legend-color type-poker"></div><span data-i18n="legend-poker">Poker &amp; Boards</span></div>
+      <div class="cal-legend-item"><div class="cal-legend-color type-board"></div><span data-i18n="legend-board">New Release</span></div>
+      <div class="cal-legend-item"><div class="cal-legend-color type-tournament"></div><span data-i18n="legend-tournament">Tournament</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="join">
+  <div class="join-content">
+    <div class="join-mark reveal">✦ ✦ ✦</div>
+    <h2 class="section-title">Join <em>the Club</em></h2>
+    <p class="join-text reveal" data-i18n="join-text">
+      経験の有無は問いません。麻雀牌に触れたことがない方も、ポーカーをやってみたい方も、まずは見学からどうぞ。所属研究科は問わず、JAIST に在籍する大学院生であればどなたでも歓迎します。
+    </p>
+
+    <div class="join-info reveal">
+      <div class="join-info-item">
+        <div class="join-info-label">Eligibility</div>
+        <div class="join-info-value" data-i18n="join-eligibility">JAIST に在籍する<br>大学院生</div>
+      </div>
+      <div class="join-info-item">
+        <div class="join-info-label">Annual Fee</div>
+        <div class="join-info-value">¥0<small data-i18n="join-fee-note"></small></div>
+      </div>
+      <div class="join-info-item">
+        <div class="join-info-label">Contact</div>
+        <div class="join-info-value">jaistanaloggameclub<wbr>@gmail.com</div>
+      </div>
+    </div>
+
+    <a href="mailto:jaistanaloggameclub@gmail.com" class="btn-primary">
+      <span>Apply for visit</span>
+      <span>→</span>
+    </a>
+    <a href="rules.html" class="btn-secondary" style="margin-top:1rem;">部則を確認する</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <div class="footer-brand-name">JAIST · A.G.C.</div>
+      <div class="footer-brand-tag">— Where minds meet at the table.</div>
+      <p class="footer-text" data-i18n="footer-text">
+        Japan Advanced Institute of Science and Technology Analog Game Club.
+        北陸先端科学技術大学院大学 公認アナログゲームサークル。
+      </p>
+    </div>
+    <div>
+      <div class="footer-heading">Sections</div>
+      <ul class="footer-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="rules.html">部則</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Connect</div>
+      <ul class="footer-list">
+        <li><a href="https://discord.gg/zVhB54hN3U">Discord</a></li>
+        <li><a href="#">X (Twitter)</a></li>
+        <li><a href="https://www.instagram.com/jaist_analoggameclub?igsh=MTltYnFvMnhzdjhhZg==">Instagram</a></li>
+        <li><a href="mailto:jaistanaloggameclub@gmail.com">Email</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Location</div>
+      <ul class="footer-list">
+        <li>1-1 Asahidai</li>
+        <li>Nomi, Ishikawa</li>
+        <li>923-1292 Japan</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© MMXXVI · JAIST ANALOG GAME CLUB</div>
+    <div>EST. APRIL 2026 · ALL RIGHTS RESERVED</div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

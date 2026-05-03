@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>部則 — JAIST Analog Game Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .rules-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2rem;
+    height: 60px;
+    background: rgba(10, 20, 40, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(176, 136, 70, 0.2);
+  }
+
+  .rules-nav-back {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--bronze-light);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+  .rules-nav-back:hover { color: var(--gold); }
+
+  .rules-nav-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--cream-dim);
+  }
+
+  .rules-hero {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(176, 136, 70, 0.15);
+  }
+
+  .rules-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--bronze);
+    margin-bottom: 1.5rem;
+  }
+
+  .rules-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+
+  .rules-title em {
+    font-style: italic;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: var(--bronze-light);
+    font-weight: inherit;
+  }
+
+  .rules-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--cream-faint);
+    letter-spacing: 0.1em;
+  }
+
+  .rules-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 8rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Table of contents */
+  .rules-toc {
+    position: sticky;
+    top: 80px;
+  }
+
+  .rules-toc-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--bronze);
+    margin-bottom: 1rem;
+  }
+
+  .rules-toc ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .rules-toc a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    color: var(--cream-dim);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s;
+    display: block;
+    padding: 0.2rem 0 0.2rem 0.75rem;
+    border-left: 1px solid transparent;
+  }
+
+  .rules-toc a:hover {
+    color: var(--bronze-light);
+    border-left-color: var(--bronze);
+  }
+
+  /* Chapters */
+  .rules-body { min-width: 0; }
+
+  .rules-chapter {
+    margin-bottom: 3.5rem;
+  }
+
+  .rules-chapter-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(176, 136, 70, 0.3);
+  }
+
+  .rules-chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--bronze);
+    white-space: nowrap;
+  }
+
+  .rules-chapter-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+  }
+
+  .rules-article {
+    margin-bottom: 1.75rem;
+  }
+
+  .rules-article-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--bronze-light);
+    margin-bottom: 0.6rem;
+  }
+
+  .rules-article p {
+    font-size: 0.95rem;
+    color: var(--cream-dim);
+    line-height: 1.85;
+    margin-bottom: 0.5rem;
+  }
+
+  .rules-article ul {
+    list-style: none;
+    margin: 0.5rem 0 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .rules-article ul li {
+    font-size: 0.9rem;
+    color: var(--cream-dim);
+    line-height: 1.75;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .rules-article ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--bronze-dark);
+  }
+
+  .rules-article ul ul {
+    margin-top: 0.3rem;
+  }
+
+  .rules-article ul ul li::before {
+    content: '·';
+  }
+
+  .rules-principle {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .rules-principle-item {
+    flex: 1;
+    min-width: 160px;
+    border: 1px solid rgba(176, 136, 70, 0.3);
+    padding: 1rem 1.25rem;
+    background: rgba(176, 136, 70, 0.04);
+  }
+
+  .rules-principle-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--bronze-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .rules-principle-desc {
+    font-size: 0.8rem;
+    color: var(--cream-faint);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .rules-footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(176, 136, 70, 0.15);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--cream-faint);
+  }
+
+  @media (max-width: 768px) {
+    .rules-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 1.25rem 5rem;
+    }
+    .rules-toc { position: static; }
+    .rules-hero { padding: 4rem 1.25rem 2.5rem; }
+    .rules-nav { padding: 0 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="rules-nav">
+  <a href="index.html" class="rules-nav-back">← Back</a>
+  <span class="rules-nav-title">JAIST · A.G.C. — 部則</span>
+</nav>
+
+<div class="rules-hero">
+  <div class="rules-eyebrow">JAIST ANALOG GAME CLUB · Official Rules</div>
+  <h1 class="rules-title">アナログボードゲーム部<br><em>規則</em></h1>
+  <div class="rules-meta">2026年4月28日 制定</div>
+</div>
+
+<div class="rules-layout">
+
+  <nav class="rules-toc">
+    <div class="rules-toc-heading">CONTENTS</div>
+    <ul>
+      <li><a href="#ch1">第1章 総則</a></li>
+      <li><a href="#ch2">第2章 行動規範</a></li>
+      <li><a href="#ch3">第3章 対人マナー</a></li>
+      <li><a href="#ch4">第4章 物品取扱</a></li>
+      <li><a href="#ch5">第5章 施設利用</a></li>
+      <li><a href="#ch6">第6章 会計</a></li>
+      <li><a href="#ch7">第7章 罰則</a></li>
+      <li><a href="#ch8">第8章 改訂・施行</a></li>
+    </ul>
+  </nav>
+
+  <div class="rules-body">
+
+    <div class="rules-chapter" id="ch1">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter I</span>
+        <span class="rules-chapter-title">総則（基本理念）</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第1条（目的）</div>
+        <p>本規定は、部員が学外において活動する際の規範を定め、部全体の社会的信用を維持し、部員が安全かつ健全にボードゲームを楽しむ環境を担保することを目的とする。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第2条（適用範囲）</div>
+        <ul>
+          <li>本規定は、全部員（休部中の者を含む）に適用される。</li>
+          <li>「アナログボードゲーム部」の名義を用いる活動、およびSNS（LINE、Instagram、Discord等）での募集・連絡を含む部員間の集まりに適用される。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch2">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter II</span>
+        <span class="rules-chapter-title">行動規範（不賭・不争・不飲）</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--cream-dim); margin-bottom:1.25rem;">部員は活動において、以下の三原則を絶対遵守事項としなければならない。</p>
+
+      <div class="rules-principle">
+        <div class="rules-principle-item">
+          <div class="rules-principle-label">不賭</div>
+          <div class="rules-principle-desc">賭博行為の禁止</div>
+        </div>
+        <div class="rules-principle-item">
+          <div class="rules-principle-label">不争</div>
+          <div class="rules-principle-desc">紛争行為の禁止</div>
+        </div>
+        <div class="rules-principle-item">
+          <div class="rules-principle-label">不飲</div>
+          <div class="rules-principle-desc">飲酒の禁止及び配慮</div>
+        </div>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第3条（不賭：賭博行為の禁止）</div>
+        <ul>
+          <li><strong style="color:var(--cream)">レートの完全廃止：</strong> 金銭、景品、およびそれに準ずる価値のあるものを賭ける行為を一切禁止する。</li>
+          <li><strong style="color:var(--cream)">フリー利用の禁止：</strong> 雀荘等における「フリー（見知らぬ他者との賭け対局）」形式での参加を禁止する。</li>
+          <li><strong style="color:var(--cream)">隠語の配慮：</strong> 賭博を想起させる記述や隠語（レート、ウマ、握る等）の使用を避ける。</li>
+        </ul>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第4条（不争：紛争行為の禁止）</div>
+        <ul>
+          <li><strong style="color:var(--cream)">礼節の保持：</strong> 対局相手、店舗スタッフ、他客への暴言、煽り、威圧的態度を禁止する。</li>
+          <li><strong style="color:var(--cream)">マナーの厳守：</strong> 過度な批判（教え魔）や、勝敗に伴う不機嫌な態度を厳重に注意する。</li>
+          <li><strong style="color:var(--cream)">騒音の禁止：</strong> 大声や台パン等の物理的衝撃行為を禁止する。</li>
+        </ul>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第5条（不飲：飲酒の禁止及び配慮）</div>
+        <ul>
+          <li><strong style="color:var(--cream)">活動中の不飲酒：</strong> 学内施設および外部施設での活動時間中は、酒類の摂取を禁止または強く自粛する。</li>
+          <li><strong style="color:var(--cream)">飲酒状態の参加禁止：</strong> 酒気を帯びた状態での参加、および活動終了後の節度を欠いた飲酒を禁止する。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch3">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter III</span>
+        <span class="rules-chapter-title">対人マナー・倫理</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第6条（ハラスメントの禁止および個人の尊厳）</div>
+        <p>本条に定めるハラスメントとは、相手の意に反する言動により、精神的苦痛を与え、または活動環境を悪化させる行為を指す。特に以下の行為を厳禁とする。</p>
+        <ul>
+          <li><strong style="color:var(--cream)">セクシャルハラスメント・ジェンダーに関する制限：</strong> 身体的接触、卑猥な言動</li>
+          <li><strong style="color:var(--cream)">パワーハラスメント・心理的圧迫：</strong> 実力・経験差の悪用、プレイスタイルの強制（教え魔）、孤立化</li>
+          <li><strong style="color:var(--cream)">プライバシーの保護と個人情報の追及：</strong> 過度な詮索、情報の二次利用、無断撮影</li>
+          <li><strong style="color:var(--cream)">ゲーム上のマナー違反に伴うハラスメント：</strong> キングメイカー・私情の持ち込み、投了の強要</li>
+        </ul>
+        <p style="margin-top:0.75rem;">ハラスメントを受けたと感じた、あるいは目撃した部員は、速やかに役員会へ報告することができる。報告を受けた役員は、被害者のプライバシーを最優先に保護し、事実関係の調査を行う。報告したことによる不利益な扱いは一切禁止する。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第7条（勧誘行為および私的利益追求の禁止）</div>
+        <p>本サークルはボードゲームを楽しむことを唯一の目的とした集まりであり、部員の信頼関係を損なうあらゆる勧誘行為を禁止する。</p>
+        <ul>
+          <li><strong style="color:var(--cream)">宗教・政治・思想団体への勧誘：</strong> 直接的な入会勧誘、行事への誘い、配布物の持ち込み等</li>
+          <li><strong style="color:var(--cream)">営利目的・ビジネス勧誘（マルチ商法等）：</strong> ネットワークビジネス、商品・サービスの販売、「成功者」への紹介</li>
+          <li><strong style="color:var(--cream)">禁止される勧誘の形態：</strong> 活動外の接触、目的を隠した接触（ブラインド勧誘）、執拗な勧誘</li>
+          <li><strong style="color:var(--cream)">他団体・他サークルへの引き抜き：</strong> 本サークルの運営を妨げる目的での執拗な引き抜き行為</li>
+        </ul>
+        <p style="margin-top:0.75rem;">部員は、自身が勧誘を受けた場合、または他の部員が勧誘されている疑いがある場合、速やかに役員へ報告しなければならない。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第8条（情報の取り扱い）</div>
+        <ul>
+          <li><strong style="color:var(--cream)">SNS投稿：</strong> 飲酒を疑われる写真や賭博を連想させる内容の投稿を禁止する。肖像権や店舗の許可に配慮すること。</li>
+          <li><strong style="color:var(--cream)">機密保持：</strong> 部内連絡ツールで共有された個人情報や非公開情報を外部に漏洩させてはならない。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch4">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter IV</span>
+        <span class="rules-chapter-title">ゲーム・物品の取り扱い</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第9条（ゲームの貸し借り）</div>
+        <ul>
+          <li>部員が個人所有のゲームを持ち寄る場合、所有者の許可を必須とし、返却期限を明確に定めること。</li>
+          <li>物品の貸借が発生した場合は、その状況を常に把握できるよう努めること。</li>
+          <li>第三者（非部員）への再貸与を一切禁止する。</li>
+        </ul>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第10条（破損・汚損の責任）</div>
+        <ul>
+          <li><strong style="color:var(--cream)">店舗備品：</strong> 店舗の設備を破損・汚損した場合は、当該部員の自己責任において賠償義務を負う。</li>
+          <li><strong style="color:var(--cream)">所有物：</strong> 部員が他者の所有物を破損・汚損した場合、誠意を持って謝罪し、修繕または現物による弁済を行う。</li>
+          <li><strong style="color:var(--cream)">飲食時の注意：</strong> スリーブの使用や飲食スペースの分離等、汚損防止を徹底する。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch5">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter V</span>
+        <span class="rules-chapter-title">施設利用と外部参加</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第11条（外部施設の利用）</div>
+        <ul>
+          <li><strong style="color:var(--cream)">雀荘利用：</strong> 貸卓（セット）として部員のみで占有することを原則とする。18歳未満の立ち入り禁止等、法令を遵守すること。</li>
+          <li><strong style="color:var(--cream)">公共性：</strong> 店舗独自のルールを尊重し、長時間の独占等で他客の迷惑とならないよう努める。</li>
+        </ul>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第12条（非会員者の参加）</div>
+        <ul>
+          <li>非会員の活動参加は、役員のいずれかが現場に居合わせることを必須条件とする。</li>
+          <li>役員が参加していない活動における非会員の同席は認められない。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch6">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter VI</span>
+        <span class="rules-chapter-title">会計（都度精算制）</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第13条（精算の原則）</div>
+        <p>活動に伴う費用（施設料・備品購入費等）は、その都度、参加者による割り勘または実費負担（都度精算）を原則とする。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第14条（精算方法と管理）</div>
+        <ul>
+          <li>費用は原則として活動終了時までに精算を完了させなければならない。</li>
+          <li>立替者は領収書や履歴を提示し、役員または参加者が内容を確認する。</li>
+          <li>高額な備品（共有ゲーム本体等）を立替購入する場合は、事前に役員会の過半数の承認を必要とする。</li>
+          <li>剰余金（端数）が生じた場合は、次回の費用や共有消耗品費に充て、役員が私的に保持することを禁じる。</li>
+        </ul>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第15条（会計担当）</div>
+        <ul>
+          <li>役員から1名を会計担当者として選出する。</li>
+          <li>会計担当者は精算の適正性を監督し、必要に応じて簡易的な支出記録を保管する。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch7">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter VII</span>
+        <span class="rules-chapter-title">罰則・緊急対応</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第16条（緊急報告）</div>
+        <p>活動中に警察・消防が介入する事態、または重大なトラブルが発生した際は、直ちに管理者に報告しなければならない。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第17条（処罰の基準）</div>
+        <p>違反者には運営委員会の裁定により「厳重注意」「活動停止」「除名処分」のいずれかを下す。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第18条（連帯責任）</div>
+        <p>重大な違反を制止・報告しなかった同席部員も、指導・処分の対象とする場合がある。</p>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="ch8">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter VIII</span>
+        <span class="rules-chapter-title">規定の改訂・施行</span>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第19条（改訂の承認）</div>
+        <p>本規定の改訂は、役員のうち過半数、かつサークル長の賛成がある場合に承認される。</p>
+      </div>
+
+      <div class="rules-article">
+        <div class="rules-article-title">第20条（施行時期）</div>
+        <p>改訂内容は、部員へ周知した日の翌日から施行される。</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="rules-footer">
+  <div>JAIST ANALOG GAME CLUB — 部則 · 2026年4月28日 制定</div>
+  <div style="margin-top:0.5rem;"><a href="index.html" style="color:var(--bronze); text-decoration:none;">← トップページに戻る</a></div>
+</footer>
+
+</body>
+</html>
