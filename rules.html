@@ -322,13 +322,18 @@
 
 <nav class="rules-nav">
   <a href="index.html" class="rules-nav-back">← Back</a>
-  <span class="rules-nav-title">JAIST · A.G.C. — サークル規則</span>
+  <span class="rules-nav-title" id="rnav-title">JAIST · A.G.C. — サークル規則</span>
+  <div class="lang-toggle" style="margin-left:auto;">
+    <button class="lang-btn active" data-lang="jp">JP</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
 </nav>
 
 <div class="rules-hero">
   <div class="rules-eyebrow">JAIST ANALOG GAME CLUB · Official Rules</div>
-  <h1 class="rules-title">アナログゲームサークル<br><em>規則</em></h1>
-  <div class="rules-meta">
+  <h1 class="rules-title" id="r-title">アナログゲームサークル<br><em>規則</em></h1>
+  <div class="rules-meta" id="r-meta">
     2026年4月28日 制定<br>
     2026年5月11日 改定
   </div>
@@ -336,7 +341,7 @@
 
 <div class="rules-layout">
 
-  <div class="rules-body">
+  <div class="rules-body" id="body-jp">
 
     <div class="rules-chapter" id="ch1">
       <div class="rules-chapter-header">
@@ -644,7 +649,286 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- /body-jp -->
+
+  <div class="rules-body" id="body-en" style="display:none">
+
+    <div class="rules-chapter" id="en-ch1">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 1</span>
+        <span class="rules-chapter-title">General Provisions</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 1 (Purpose)</div>
+        <p>The purpose of this Constitution is to establish the standards of conduct for club members during activities both on and off campus, to maintain the social credibility of the entire club, and to ensure a safe and sound environment for members to enjoy board games.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 2 (Scope of Application)</div>
+        <ul>
+          <li>This Constitution shall apply to all club members, including those on a leave of absence.</li>
+          <li>It shall apply to any activities using the name of the "Analog Game Club" and any gatherings among club members, including those organized or communicated via SNS (e.g., LINE, Instagram, Discord).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch2">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 2</span>
+        <span class="rules-chapter-title">General Meetings, Executive Organization, and Membership</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 3 (General Meetings)</div>
+        <p>The club shall hold a general meeting once every semester. At the general meeting, the election of officers, reporting of budgets and financial statements, and the approval and deliberation of other important matters concerning club management shall be conducted.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 4 (Number of Officers and Duties)</div>
+        <p>The club shall have the following officers, who shall constitute the Executive Board:</p>
+        <ul>
+          <li><strong style="color:var(--cream)">President (1 person):</strong> Represents the club and oversees all activities.</li>
+          <li><strong style="color:var(--cream)">Vice President / Planning (1 person):</strong> Assists the President and leads the planning and management of regular meetings and events.</li>
+          <li><strong style="color:var(--cream)">Public Relations (1 person):</strong> Handles SNS operations, member recruitment, and acts as the external point of contact.</li>
+          <li><strong style="color:var(--cream)">Server Administrator (1 person):</strong> Constructs and maintains communication tools such as Discord, and manages IT assets.</li>
+          <li><strong style="color:var(--cream)">Legal Affairs (1 person):</strong> Manages this Constitution, assists in arbitration when trouble occurs, and oversees compliance.</li>
+          <li><strong style="color:var(--cream)">Accounting (1 person):</strong> Manages the club's budget and dues based on Chapter 7, and ensures accounting transparency.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 5 (Election and Term of Officers)</div>
+        <ul>
+          <li>Candidates for officers shall be recruited from among the club members through self-nomination or peer nomination, and shall be elected by a majority vote of the attendees at the general meeting (or via online voting).</li>
+          <li>The term of office for officers shall be one year. However, this does not preclude reappointment.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 6 (Handover of Duties and Transfer of Authority)</div>
+        <p>Upon the replacement or retirement of an officer, the handover of duties must be conducted promptly. In particular, the Server Administrator and Public Relations officers must securely transfer Discord owner privileges, various SNS accounts, shared drive administrator privileges, and passwords to the succeeding officers.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 7 (Dismissal and Mass Dismissal of Officers)</div>
+        <ul>
+          <li><strong style="color:var(--cream)">Dismissal:</strong> If an officer is deemed unfit for the position, such as in the case of a severe violation of this Constitution, the officer may be dismissed by a majority vote of the Executive Board.</li>
+          <li><strong style="color:var(--cream)">Mass Dismissal of Officers:</strong> If a majority vote under the preceding paragraph is deemed ineffective (e.g., officers forming a faction), a mass dismissal of all officers may be executed with the approval of three-quarters or more of all club members.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 8 (Enrollment, Withdrawal, and Leave of Absence)</div>
+        <ul>
+          <li>Individuals wishing to join the club must notify the Executive Board and shall become members upon agreeing to this Constitution.</li>
+          <li>Members wishing to withdraw may do so voluntarily by notifying an officer.</li>
+          <li>Members who cannot be contacted for an extended period and are deemed to have no actual record of activity may be expelled or placed on a leave of absence by a resolution of the Executive Board.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 9 (Principle of Prioritizing Academic/Research Activities and Activity Restrictions)</div>
+        <ul>
+          <li>Club members must prioritize their primary duties as students, including academics and laboratory activities (e.g., seminars, core time, conference presentations, thesis writing).</li>
+          <li>Club members must respect each other's academic and research schedules and shall not unfairly criticize absences or tardiness caused by these reasons.</li>
+          <li>The Executive Board may, by resolution, order a temporary suspension of activities for members who have received academic warnings from the university or who are objectively judged to be experiencing difficulties with their studies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch3">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 3</span>
+        <span class="rules-chapter-title">Code of Conduct (No Gambling, No Conflict, Moderation in Drinking)</span>
+      </div>
+      <div class="rules-principle">
+        <div class="rules-principle-item">
+          <div class="rules-principle-label">No Gambling</div>
+          <div class="rules-principle-desc">Prohibition of gambling</div>
+        </div>
+        <div class="rules-principle-item">
+          <div class="rules-principle-label">No Conflict</div>
+          <div class="rules-principle-desc">Prohibition of conflict</div>
+        </div>
+        <div class="rules-principle-item">
+          <div class="rules-principle-label">Moderation</div>
+          <div class="rules-principle-desc">Rules regarding alcohol</div>
+        </div>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 10 (No Gambling: Prohibition of Gambling Acts)</div>
+        <ul>
+          <li><strong style="color:var(--cream)">Total Abolition of Rates:</strong> Any act of betting money, prizes, or items of equivalent value is strictly prohibited.</li>
+          <li><strong style="color:var(--cream)">Prohibition of "Free" Participation:</strong> Participation in "free" formats (betting matches with strangers) at mahjong parlors and similar venues is prohibited.</li>
+          <li><strong style="color:var(--cream)">Avoidance of Slang:</strong> The use of descriptions or slang that suggest gambling must be avoided.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 11 (No Conflict: Prohibition of Conflict-Inducing Acts)</div>
+        <ul>
+          <li><strong style="color:var(--cream)">Maintaining Courtesy:</strong> Abusive language, provocation, or an intimidating attitude toward opponents, store staff, or other customers is prohibited.</li>
+          <li><strong style="color:var(--cream)">Strict Adherence to Manners:</strong> Excessive criticism (e.g., unsolicited advising / forcing playstyles) and displaying a bad temper over winning or losing are subject to strict warnings.</li>
+          <li><strong style="color:var(--cream)">Prohibition of Noise:</strong> Loud shouting and physical impact actions, such as hitting the table, are prohibited.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 12 (Rules and Moderation regarding Alcohol)</div>
+        <ul>
+          <li><strong style="color:var(--cream)">Moderate Drinking:</strong> Drinking alcohol during activities is permitted, but members must always drink in moderation so as not to cause a nuisance to others.</li>
+          <li><strong style="color:var(--cream)">Prohibition of Coercion in Penalty Games:</strong> Coercing individuals to drink alcohol as a penalty game based on game results or as an object of any kind of bet (e.g., chugging/binge drinking) is strictly prohibited.</li>
+          <li><strong style="color:var(--cream)">Legal Compliance:</strong> In accordance with the law, drinking by persons under 20 years of age, and operating vehicles (including bicycles) after drinking, are absolutely prohibited.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch4">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 4</span>
+        <span class="rules-chapter-title">Interpersonal Manners and Ethics</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 13 (Prohibition of Harassment and Respect for Individual Dignity)</div>
+        <p>The following acts that cause mental distress or deteriorate the activity environment are strictly prohibited:</p>
+        <ul>
+          <li><strong style="color:var(--cream)">Sexual Harassment:</strong> Physical contact, obscene remarks or behavior.</li>
+          <li><strong style="color:var(--cream)">Power Harassment:</strong> Abuse of differences in skill or experience, forcing playstyles, or isolating members.</li>
+          <li><strong style="color:var(--cream)">Invasion of Privacy:</strong> Excessive snooping, secondary use of personal information, or unauthorized photography.</li>
+          <li><strong style="color:var(--cream)">Harassment Associated with Poor Gaming Manners:</strong> Kingmaking, bringing personal grudges into the game, or forcing a player to concede.</li>
+        </ul>
+        <p style="margin-top:0.75rem;">Any club member who feels they have been harassed or has witnessed harassment may report it to the Executive Board. The officers shall conduct an investigation while prioritizing the protection of privacy. Disadvantageous treatment of a member for making a report is prohibited.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 14 (Prohibition of Solicitation and Pursuit of Private Interests)</div>
+        <p>Any solicitation acts that undermine the relationship of trust among club members are prohibited.</p>
+        <ul>
+          <li><strong style="color:var(--cream)">Solicitation for Religious, Political, or Ideological Groups:</strong> Inviting members to events under the guise of study groups, or bringing in distributed materials.</li>
+          <li><strong style="color:var(--cream)">Commercial/Business Solicitation:</strong> Network businesses such as multi-level marketing, sales of products/services, or introducing members to "successful people."</li>
+          <li><strong style="color:var(--cream)">Prohibited Forms:</strong> Blind solicitation (contacting someone while hiding the true purpose) or persistent solicitation using private contact outside of activities.</li>
+          <li><strong style="color:var(--cream)">Poaching for Other Organizations:</strong> Persistent poaching of members to similar organizations with the intent of interfering with the operation of this club (healthy dual-membership is not included in this restriction).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch5">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 5</span>
+        <span class="rules-chapter-title">Handling of Goods and Equipment</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 15 (Bringing and Lending/Borrowing Games)</div>
+        <ul>
+          <li><strong style="color:var(--cream)">Bringing Personal Items:</strong> Club members are free to bring their personally owned board games to activities, separate from club-owned games.</li>
+          <li><strong style="color:var(--cream)">Principle of Lending and Borrowing:</strong> When members bring personally owned games, the owner's permission is strictly required for use, and a clear deadline for return must be set.</li>
+          <li><strong style="color:var(--cream)">Prohibition of Sub-lending:</strong> Sub-lending games to a third party (non-member) is strictly prohibited.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 16 (Responsibility for Damage/Defacement and Hygiene Management)</div>
+        <ul>
+          <li><strong style="color:var(--cream)">Damage to Store Equipment/Personal Property:</strong> If a member damages or defaces facility equipment or another person's property, they must sincerely apologize and shall be liable for repairing the item or compensating for it with their own responsibility.</li>
+          <li><strong style="color:var(--cream)">Recommendation for Hygiene Management:</strong> To prevent game components from getting dirty, members are recommended to wash or disinfect their hands before playing. Members should ensure they do not touch components directly with hands that have just handled snacks or greasy food.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch6">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 6</span>
+        <span class="rules-chapter-title">Use of Facilities and External Participation</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 17 (Use of External Facilities)</div>
+        <ul>
+          <li>When using mahjong parlors or similar venues, the principle is to reserve private tables (sets) exclusively for club members. All laws must be observed, such as prohibiting entry to persons under 18.</li>
+          <li>Members must respect the unique rules of the venue and strive not to cause a nuisance to other customers.</li>
+        </ul>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 18 (Participation of Non-Members)</div>
+        <p>The participation of non-members in activities strictly requires that at least one officer be present on-site. The attendance of non-members at activities where no officers are present is not permitted.</p>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch7">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 7</span>
+        <span class="rules-chapter-title">Accounting and Club Dues</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 19 (Collection of Club Dues)</div>
+        <p>Club members must pay 1,000 yen as club dues every semester.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 20 (Use and Ownership of Club Dues)</div>
+        <p>Club dues shall be used to purchase shared board games and cover expenses necessary for club management. Board games purchased using club dues are the property of the club, not of any individual.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 21 (Transparency and Management of Accounting)</div>
+        <p>The Accounting officer is responsible for ensuring accounting transparency by strictly creating and storing detailed records of how club dues are spent, and by reporting this at the general meetings each semester.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 22 (Reminders for Arrears and Exemption/Grace Measures)</div>
+        <ul>
+          <li>The Accounting officer shall issue reminders to members whose payment of club dues is delayed.</li>
+          <li>For members who lack the ability to pay or have special circumstances, a grace period or exemption measure may be granted based on the member's request, subject to the approval of the Executive Board.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch8">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 8</span>
+        <span class="rules-chapter-title">Handling of Information and Intellectual Property</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 23 (Confidentiality and Personal Information)</div>
+        <p>Personal information or non-public information shared within the club's internal communication tools must not be leaked to the outside.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 24 (SNS Posting and Intellectual Property)</div>
+        <ul>
+          <li>Members must comply with game manufacturers' guidelines, and posting content that touches upon the core of spoiler-sensitive games (such as Murder Mystery games) is strictly prohibited.</li>
+          <li>If posted photos include the faces or personal information of non-members, privacy rights must be respected, and appropriate processing (such as blurring or pixelation) must be applied.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch9">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 9</span>
+        <span class="rules-chapter-title">Penalties and Emergency Response</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 25 (Emergency Reporting)</div>
+        <p>In the event of a situation requiring police or fire department intervention, or if a serious problem occurs during activities, it must be immediately reported to the President and the officers.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 26 (Criteria for Punishment)</div>
+        <p>Violators of this Constitution shall be subject to a "strict warning," "suspension of activities," or "expulsion," as decided by the Executive Board.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 27 (Expulsion due to Unpaid Club Dues)</div>
+        <p>A person who continuously ignores reminders for club dues without a justifiable reason and is deemed to have no intention to pay shall be subject to expulsion by the decision of the Executive Board.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 28 (Joint Responsibility)</div>
+        <p>Members present who fail to stop or report a serious violation may also be subject to guidance or punishment.</p>
+      </div>
+    </div>
+
+    <div class="rules-chapter" id="en-ch10">
+      <div class="rules-chapter-header">
+        <span class="rules-chapter-num">Chapter 10</span>
+        <span class="rules-chapter-title">Supplementary Provisions and Revision of Regulations</span>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 29 (Handling of Unstipulated Matters)</div>
+        <p>Matters not stipulated in this Constitution, or matters where doubts arise in interpretation, shall be discussed and decided by the President and the Executive Board in light of socially accepted norms.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 30 (Approval of Revisions)</div>
+        <p>Revisions to this Constitution shall be approved by a majority of the officers and the consent of the President.</p>
+      </div>
+      <div class="rules-article">
+        <div class="rules-article-title">Article 31 (Date of Enforcement)</div>
+        <p>This Constitution shall come into effect on April 28, 2026. Revised contents shall come into effect on the day following the date they are announced to club members.</p>
+      </div>
+    </div>
+
+  </div><!-- /body-en -->
+
 </div>
 
 <!-- 浮かせる目次ボタン -->
@@ -673,6 +957,7 @@
 </footer>
 
 <script>
+  // === 目次ポップアップ ===
   const tocBtn = document.getElementById('tocBtn');
   const tocPopup = document.getElementById('tocPopup');
 
@@ -681,7 +966,6 @@
     tocBtn.classList.toggle('open', isOpen);
   });
 
-  // リンクをクリックしたら閉じる
   tocPopup.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       tocPopup.classList.remove('open');
@@ -689,12 +973,69 @@
     });
   });
 
-  // 外側クリックで閉じる
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.toc-float')) {
       tocPopup.classList.remove('open');
       tocBtn.classList.remove('open');
     }
+  });
+
+  // === JP/EN 切り替え ===
+  const i18nRules = {
+    jp: {
+      navTitle: 'JAIST · A.G.C. — サークル規則',
+      heroTitle: 'アナログゲームサークル<br><em>規則</em>',
+      meta: '2026年4月28日 制定<br>2026年5月11日 改定',
+      toc: [
+        '第1章 総則','第2章 総会・役員組織・サークル員資格','第3章 行動規範',
+        '第4章 対人マナー・倫理','第5章 物品の取り扱い','第6章 施設利用と外部参加',
+        '第7章 会計とサークル費','第8章 情報の取り扱いと知的財産','第9章 罰則・緊急対応','第10章 補則・規定の改訂'
+      ],
+      tocAnchors: ['#ch1','#ch2','#ch3','#ch4','#ch5','#ch6','#ch7','#ch8','#ch9','#ch10'],
+    },
+    en: {
+      navTitle: 'JAIST · A.G.C. — Club Constitution',
+      heroTitle: 'Analog Game Club<br><em>Constitution</em>',
+      meta: 'Established: April 28, 2026<br>Revised: May 11, 2026',
+      toc: [
+        'Chapter 1: General Provisions','Chapter 2: General Meetings & Membership','Chapter 3: Code of Conduct',
+        'Chapter 4: Manners & Ethics','Chapter 5: Handling of Goods','Chapter 6: Facilities & Participation',
+        'Chapter 7: Accounting & Dues','Chapter 8: Information & IP','Chapter 9: Penalties & Emergency','Chapter 10: Supplementary Provisions'
+      ],
+      tocAnchors: ['#en-ch1','#en-ch2','#en-ch3','#en-ch4','#en-ch5','#en-ch6','#en-ch7','#en-ch8','#en-ch9','#en-ch10'],
+    },
+  };
+
+  function switchRulesLang(lang) {
+    const d = i18nRules[lang];
+    document.getElementById('rnav-title').innerHTML = d.navTitle;
+    document.getElementById('r-title').innerHTML = d.heroTitle;
+    document.getElementById('r-meta').innerHTML = d.meta;
+
+    // body 切り替え
+    document.getElementById('body-jp').style.display = lang === 'jp' ? '' : 'none';
+    document.getElementById('body-en').style.display = lang === 'en' ? '' : 'none';
+
+    // TOC 更新
+    const tocList = tocPopup.querySelector('ul');
+    tocList.innerHTML = d.toc.map((t, i) =>
+      `<li><a href="${d.tocAnchors[i]}">${t}</a>`
+    ).join('');
+    tocPopup.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        tocPopup.classList.remove('open');
+        tocBtn.classList.remove('open');
+      });
+    });
+
+    // ボタン状態
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchRulesLang(btn.dataset.lang));
   });
 </script>
 </body>
