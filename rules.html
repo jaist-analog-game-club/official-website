@@ -89,56 +89,15 @@
   }
 
   .rules-layout {
-    max-width: 900px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 4rem 2rem 8rem;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 3rem;
-    align-items: start;
   }
 
-  /* Table of contents */
-  .rules-toc {
-    position: sticky;
-    top: 80px;
+  /* 本文 */
+  .rules-body {
+    min-width: 0;
   }
-
-  .rules-toc-heading {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--bronze);
-    margin-bottom: 1rem;
-  }
-
-  .rules-toc ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .rules-toc a {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    color: var(--cream-dim);
-    text-decoration: none;
-    line-height: 1.4;
-    transition: color 0.2s;
-    display: block;
-    padding: 0.2rem 0 0.2rem 0.75rem;
-    border-left: 1px solid transparent;
-  }
-
-  .rules-toc a:hover {
-    color: var(--bronze-light);
-    border-left-color: var(--bronze);
-  }
-
-  /* Chapters */
-  .rules-body { min-width: 0; }
 
   .rules-chapter {
     margin-bottom: 3.5rem;
@@ -258,15 +217,104 @@
     color: var(--cream-faint);
   }
 
+  /* === 浮かせる目次 === */
+  .toc-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  .toc-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(176, 136, 70, 0.5);
+    background: rgba(10, 20, 40, 0.95);
+    color: var(--bronze-light);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  .toc-btn:hover {
+    background: rgba(176, 136, 70, 0.15);
+    border-color: var(--bronze-light);
+    transform: scale(1.05);
+  }
+
+  .toc-btn.open {
+    background: rgba(176, 136, 70, 0.2);
+    border-color: var(--bronze-light);
+  }
+
+  .toc-popup {
+    background: rgba(10, 20, 40, 0.97);
+    border: 1px solid rgba(176, 136, 70, 0.25);
+    backdrop-filter: blur(16px);
+    padding: 1.25rem 1.5rem;
+    min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none;
+  }
+
+  .toc-popup.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .toc-popup-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--bronze);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc-popup ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .toc-popup a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+    text-decoration: none;
+    display: block;
+    padding: 0.3rem 0 0.3rem 0.6rem;
+    border-left: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    line-height: 1.4;
+  }
+
+  .toc-popup a:hover {
+    color: var(--bronze-light);
+    border-left-color: var(--bronze);
+  }
+
   @media (max-width: 768px) {
-    .rules-layout {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 2rem 1.25rem 5rem;
-    }
-    .rules-toc { position: static; }
+    .rules-layout { padding: 2rem 1.25rem 5rem; }
     .rules-hero { padding: 4rem 1.25rem 2.5rem; }
     .rules-nav { padding: 0 1.25rem; }
+    .toc-float { bottom: 1.25rem; right: 1.25rem; }
   }
 </style>
 </head>
@@ -287,22 +335,6 @@
 </div>
 
 <div class="rules-layout">
-
-  <nav class="rules-toc">
-    <div class="rules-toc-heading">CONTENTS</div>
-    <ul>
-      <li><a href="#ch1">第1章 総則</a></li>
-      <li><a href="#ch2">第2章 総会・役員組織・サークル員資格</a></li>
-      <li><a href="#ch3">第3章 行動規範</a></li>
-      <li><a href="#ch4">第4章 対人マナー・倫理</a></li>
-      <li><a href="#ch5">第5章 物品の取り扱い</a></li>
-      <li><a href="#ch6">第6章 施設利用と外部参加</a></li>
-      <li><a href="#ch7">第7章 会計とサークル費</a></li>
-      <li><a href="#ch8">第8章 情報の取り扱いと知的財産</a></li>
-      <li><a href="#ch9">第9章 罰則・緊急対応</a></li>
-      <li><a href="#ch10">第10章 補則・規定の改訂</a></li>
-    </ul>
-  </nav>
 
   <div class="rules-body">
 
@@ -615,10 +647,55 @@
   </div>
 </div>
 
+<!-- 浮かせる目次ボタン -->
+<div class="toc-float">
+  <div class="toc-popup" id="tocPopup">
+    <div class="toc-popup-heading">CONTENTS</div>
+    <ul>
+      <li><a href="#ch1">第1章 総則</a></li>
+      <li><a href="#ch2">第2章 総会・役員組織・サークル員資格</a></li>
+      <li><a href="#ch3">第3章 行動規範</a></li>
+      <li><a href="#ch4">第4章 対人マナー・倫理</a></li>
+      <li><a href="#ch5">第5章 物品の取り扱い</a></li>
+      <li><a href="#ch6">第6章 施設利用と外部参加</a></li>
+      <li><a href="#ch7">第7章 会計とサークル費</a></li>
+      <li><a href="#ch8">第8章 情報の取り扱いと知的財産</a></li>
+      <li><a href="#ch9">第9章 罰則・緊急対応</a></li>
+      <li><a href="#ch10">第10章 補則・規定の改訂</a></li>
+    </ul>
+  </div>
+  <button class="toc-btn" id="tocBtn" aria-label="目次">≡</button>
+</div>
+
 <footer class="rules-footer">
   <div>JAIST ANALOG GAME CLUB — サークル規則 · 2026年5月11日 改定</div>
   <div style="margin-top:0.5rem;"><a href="index.html" style="color:var(--bronze); text-decoration:none;">← トップページに戻る</a></div>
 </footer>
 
+<script>
+  const tocBtn = document.getElementById('tocBtn');
+  const tocPopup = document.getElementById('tocPopup');
+
+  tocBtn.addEventListener('click', () => {
+    const isOpen = tocPopup.classList.toggle('open');
+    tocBtn.classList.toggle('open', isOpen);
+  });
+
+  // リンクをクリックしたら閉じる
+  tocPopup.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      tocPopup.classList.remove('open');
+      tocBtn.classList.remove('open');
+    });
+  });
+
+  // 外側クリックで閉じる
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.toc-float')) {
+      tocPopup.classList.remove('open');
+      tocBtn.classList.remove('open');
+    }
+  });
+</script>
 </body>
 </html>
