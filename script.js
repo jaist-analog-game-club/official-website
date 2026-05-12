@@ -109,6 +109,7 @@ let currentLang = 'jp';
 
 function switchLang(lang) {
   currentLang = lang;
+  localStorage.setItem('lang', lang);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
@@ -121,6 +122,10 @@ function switchLang(lang) {
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => switchLang(btn.dataset.lang));
 });
+
+// ページ読み込み時に保存済みの言語を復元
+const savedLang = localStorage.getItem('lang');
+if (savedLang && savedLang !== 'jp') switchLang(savedLang);
 
 // === Calendar ===
 const GC_API_KEY = 'AIzaSyBM4G5I8pjJ-4q8kvW7ZIluMHRji3_JaGg';
