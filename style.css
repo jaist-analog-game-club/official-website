@@ -726,10 +726,11 @@
 
   .schedule {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 340px));
     gap: 1.2rem;
     max-width: 1300px;
     margin: 0 auto 5rem;
+    justify-content: center;
   }
 
   .schedule-card {
